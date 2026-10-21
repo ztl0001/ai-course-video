@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 输出物
+video-out/
+examples/out/
+*.mp4
+*.webm
+
+# 系统
+.DS_Store
+Thumbs.db

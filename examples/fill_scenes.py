@@ -13,7 +13,7 @@ P = ROOT / "scenes.json"
 S = json.loads(P.read_text(encoding="utf-8"))
 
 FILL = {
-    0: dict(sub="装饰器，到底在做什么？"),
+    0: dict(line1="装饰器", line2="到底在做什么？", sub="3.1 · 从函数到 @ 语法", label="HELLO · 3.1"),
     1: dict(
         label="3.1.1",
         title="装饰器就是一个普通函数",

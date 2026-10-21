@@ -61,11 +61,11 @@ def image_page(out,label,title,sub,src,maxw,maxh,idx,total):
                         fill=(255,255,255),outline=LINE,width=2)
     img.paste(im,(x,y)); footer(d,idx,total); img.save(out,quality=95)
 
-def hook_page(out,idx,total,line1="你的 Agent",line2="记得住你吗？",sub=""):
+def hook_page(out,idx,total,line1="你的 Agent",line2="记得住你吗？",sub="",label="HELLO · 8.2"):
     img=Image.new("RGB",(W,H),(24,26,32)); d=ImageDraw.Draw(img)
     for x in range(0,W,80): d.line([(x,0),(x,H)],fill=(38,41,50),width=1)
     d.ellipse([110,250,140,280],fill=PURPLE)
-    d.text((170,246),"HELLO · 8.2",font=fb(30),fill=(170,140,220))
+    d.text((170,246),label,font=fb(30),fill=(170,140,220))
     d.text((108,340),line1,font=fb(112),fill=(248,248,250))
     d.text((108,480),line2,font=fb(112),fill=(248,248,250))
     if sub: d.text((112,660),sub,font=fr(34),fill=(168,170,182))
@@ -97,7 +97,9 @@ def main():
     for s in S:
         i=s["idx"]; k=s["kind"]; fn=f"{i:02d}_{k}.png"
         if k=="hook":
-            hook_page(out/fn,i+1,total,sub=s.get("sub",""))
+            hook_page(out/fn,i+1,total,line1=s.get("line1","你的 Agent"),
+                      line2=s.get("line2","记得住你吗？"),sub=s.get("sub",""),
+                      label=s.get("label","HELLO · 8.2"))
         elif k=="title":
             title_page(out/fn,i+1,total,items=s.get("items",()))
         elif k=="end":

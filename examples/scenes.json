@@ -4,8 +4,11 @@
   "voice": "",
   "idx": 0,
   "total": 11,
-  "sub": "装饰器，到底在做什么？",
-  "img": "00_hook.png"
+  "sub": "3.1 · 从函数到 @ 语法",
+  "img": "00_hook.png",
+  "line1": "装饰器",
+  "line2": "到底在做什么？",
+  "label": "HELLO · 3.1"
  },
  {
   "kind": "text",
